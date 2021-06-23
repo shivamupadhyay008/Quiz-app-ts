@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { useAppContext } from "../../context/AppContext";
 import { useMediaQuery } from "@chakra-ui/react";
-import { AnswerStateType, Quiz, UserAnswerType } from "../../datatypes/dt";
+import { AnswerStateType, Quiz, } from "../../datatypes/dt";
 export function Answers({
   question,
   Answer,
@@ -59,20 +59,20 @@ export function Answers({
     </Box>
   );
 }
+export function getScore(Qdata: Quiz, userAnswers: AnswerStateType[]) {
+  var score: number = 0;
+  Qdata.Questions.forEach((item, index) => {
+    if (item.answer === userAnswers[index].userAnswer) {
+      score += 5;
+    } else score -= 5;
+  });
+  return score;
+}
 export function Dashboard() {
   const [mediaReuired] = useMediaQuery("(max-width: 600px)");
   const { state } = useAppContext();
   const { QuizData, userAnswer } = state;
-  function getScore(Qdata:Quiz,userAnswers:AnswerStateType[]){
-    var score:number=0;
-     Qdata.Questions.forEach((item,index)=>{
 
-      if(item.answer===userAnswers[index].userAnswer){
-        score+=5;
-      }else score-=5;
-      })
-  return score;
-    }
   const score = getScore(QuizData,userAnswer );
 
   return (
