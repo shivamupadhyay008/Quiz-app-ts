@@ -37,35 +37,6 @@ export function Navbar() {
             </Flex>
           </Link>
         </Box>
-        {mediaReuired ? (
-          <Box
-            d="inline-block"
-            p="2"
-            className="ver-elips-icon"
-            borderRadius="full"
-            cursor="pointer"
-            color="#fff"
-            colorScheme="teal"
-          >
-            <BsThreeDotsVertical fontSize="23px" opacity="100" />
-          </Box>
-        ) : (
-          ""
-        )}
-        {!mediaReuired ? (
-          <Box
-            d="inline-block"
-            p="1"
-            borderRadius="full"
-            cursor="pointer"
-            color="#fff"
-            colorScheme="teal"
-          >
-            <Avatar size="sm" src="https://via.placeholder.com/150" />
-          </Box>
-        ) : (
-          ""
-        )}
       </Flex>
     </Box>
   );

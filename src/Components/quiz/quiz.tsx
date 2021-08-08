@@ -65,7 +65,7 @@ export function QuizPage() {
     <Box
       bg=" linear-gradient(177deg, rgba(2,0,36,1) 0%, rgba(135,79,204,1) 0%, rgba(126,88,208,1) 9%, rgba(112,102,213,1) 28%, rgba(75,139,227,1) 61%, rgba(35,178,242,1) 76%, rgba(0,212,255,1) 100%)
 "
-      h="92vh"
+      minH="92vh"
     >
       <QuizModal />
       <div>
